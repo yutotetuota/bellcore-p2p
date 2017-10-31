@@ -4,12 +4,12 @@
 
 var should = require('chai').should();
 
-var bitcore = require('bitcore-lib');
+var vertcore = require('vertcore-lib');
 var P2P = require('../');
 var Inventory = P2P.Inventory;
-var BufferUtils = bitcore.util.buffer;
-var BufferWriter = bitcore.encoding.BufferWriter;
-var BufferReader = bitcore.encoding.BufferReader;
+var BufferUtils = vertcore.util.buffer;
+var BufferWriter = vertcore.encoding.BufferWriter;
+var BufferReader = vertcore.encoding.BufferReader;
 
 describe('Inventory', function() {
 
