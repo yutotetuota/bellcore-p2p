@@ -16,7 +16,7 @@ describe('Inventory', function() {
   var hash = new Buffer('eb951630aba498b9a0d10f72b5ea9e39d5ff04b03dc2231e662f52057f948aa1', 'hex');
   var hashedStr = BufferUtils.reverse(new Buffer(hash, 'hex')).toString('hex');
   var inventoryBuffer = new Buffer(
-    '01000000eb951630aba498b9a0d10f72b5ea9e39d5ff04b03dc2231e662f52057f948aa1',
+    '01000040eb951630aba498b9a0d10f72b5ea9e39d5ff04b03dc2231e662f52057f948aa1',
     'hex'
   );
 
@@ -48,7 +48,7 @@ describe('Inventory', function() {
     it('use correct block type', function() {
       var inventory = Inventory.forBlock(hash);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.BLOCK);
+      inventory.type.should.equal(Inventory.TYPE.WITNESS_BLOCK);
     });
   });
 
@@ -56,7 +56,7 @@ describe('Inventory', function() {
     it('use correct filtered block type', function() {
       var inventory = Inventory.forFilteredBlock(hash);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.FILTERED_BLOCK);
+      inventory.type.should.equal(Inventory.TYPE.FILTERED_WITNESS_BLOCK);
     });
   });
 
@@ -64,7 +64,7 @@ describe('Inventory', function() {
     it('use correct filtered tx type', function() {
       var inventory = Inventory.forTransaction(hash);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.TX);
+      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
     });
   });
 
@@ -89,7 +89,7 @@ describe('Inventory', function() {
     it('deserialize a buffer', function() {
       var inventory = Inventory.fromBuffer(inventoryBuffer);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.TX);
+      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
       inventory.hash.should.deep.equal(hash);
     });
   });
@@ -99,7 +99,7 @@ describe('Inventory', function() {
       var bw = new BufferReader(inventoryBuffer);
       var inventory = Inventory.fromBufferReader(bw);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.TX);
+      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
       inventory.hash.should.deep.equal(hash);
     });
   });
