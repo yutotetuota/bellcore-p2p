@@ -48,6 +48,11 @@ describe('Inventory', function() {
     it('use correct block type', function() {
       var inventory = Inventory.forBlock(hash);
       should.exist(inventory);
+      inventory.type.should.equal(Inventory.TYPE.BLOCK);
+    });
+    it('use correct witness block type', function() {
+      var inventory = Inventory.forBlock(hash, true);
+      should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.WITNESS_BLOCK);
     });
   });
@@ -56,13 +61,23 @@ describe('Inventory', function() {
     it('use correct filtered block type', function() {
       var inventory = Inventory.forFilteredBlock(hash);
       should.exist(inventory);
+      inventory.type.should.equal(Inventory.TYPE.FILTERED_BLOCK);
+    });
+    it('use correct filtered witness block type', function() {
+      var inventory = Inventory.forFilteredBlock(hash, true);
+      should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.FILTERED_WITNESS_BLOCK);
     });
   });
 
   describe('#forTransaction', function() {
-    it('use correct filtered tx type', function() {
+    it('use correct tx type', function() {
       var inventory = Inventory.forTransaction(hash);
+      should.exist(inventory);
+      inventory.type.should.equal(Inventory.TYPE.TX);
+    });
+    it('use correct witness tx type', function() {
+      var inventory = Inventory.forTransaction(hash, true);
       should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
     });
@@ -70,7 +85,7 @@ describe('Inventory', function() {
 
   describe('#toBuffer', function() {
     it('serialize correctly', function() {
-      var inventory = Inventory.forTransaction(hash);
+      var inventory = Inventory.forTransaction(hash, true);
       var buffer = inventory.toBuffer();
       buffer.should.deep.equal(inventoryBuffer);
     });
@@ -79,7 +94,7 @@ describe('Inventory', function() {
   describe('#toBufferWriter', function() {
     it('write to a buffer writer', function() {
       var bw = new BufferWriter();
-      var inventory = Inventory.forTransaction(hash);
+      var inventory = Inventory.forTransaction(hash, true);
       inventory.toBufferWriter(bw);
       bw.concat().should.deep.equal(inventoryBuffer);
     });
