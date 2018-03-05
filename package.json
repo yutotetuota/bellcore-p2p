@@ -18,7 +18,7 @@
     "url": "https://github.com/Cubey2019/vertcore-p2p.git"
   },
   "dependencies": {
-    "vertcore-lib": "git://github.com/Cubey2019/vertcore-lib.git#vcoin",
+    "vertcore-lib": "git://github.com/Cubey2019/vertcore-lib.git",
     "vcoin": "git://github.com/Cubey2019/vcoin.git",
     "bloom-filter": "^0.2.0",
     "buffers": "bitpay/node-buffers#v0.1.2-bitpay",
