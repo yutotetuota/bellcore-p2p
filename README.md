@@ -4,12 +4,12 @@ Vertcore P2P
 =======
 
 [![NPM Package](https://img.shields.io/npm/v/vertcore-p2p.svg?style=flat-square)](https://www.npmjs.org/package/vertcore-p2p)
-[![Build Status](https://img.shields.io/travis/Cubey2019/vertcore-p2p.svg?branch=master&style=flat-square)](https://travis-ci.org/Cubey2019/vertcore-p2p)
-[![Coverage Status](https://img.shields.io/coveralls/Cubey2019/vertcore-p2p.svg?style=flat-square)](https://coveralls.io/r/Cubey2019/vertcore-p2p?branch=master)
+[![Build Status](https://img.shields.io/travis/vertcoin-project/vertcore-p2p.svg?branch=master&style=flat-square)](https://travis-ci.org/vertcoin-project/vertcore-p2p)
+[![Coverage Status](https://img.shields.io/coveralls/vertcoin-project/vertcore-p2p.svg?style=flat-square)](https://coveralls.io/r/vertcoin-project/vertcore-p2p?branch=master)
 
 `vertcore-p2p` adds [Vertcoin protocol](https://en.bitcoin.it/wiki/Protocol_documentation) support for Vertcore.
 
-See [the main vertcore repo](https://github.com/Cubey2019/vertcore) for more information.
+See [the main vertcore repo](https://github.com/vertcoin-project/vertcore) for more information.
 
 ## Getting Started
 
@@ -49,11 +49,10 @@ Take a look at the [vertcore guide](http://vertcore.io/guide/peer.html) on the u
 
 ## Contributing
 
-See [CONTRIBUTING.md](https://github.com/Cubey2019/vertcore/blob/master/CONTRIBUTING.md) on the main vertcore repo for information about how to contribute.
+See [CONTRIBUTING.md](https://github.com/vertcoin-project/vertcore/blob/master/CONTRIBUTING.md) on the main vertcore repo for information about how to contribute.
 
 ## License
 
-Code released under [the MIT license](https://github.com/Cubey2019/vertcore/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/vertcoin-project/vertcore/blob/master/LICENSE).
 
 Copyright 2013-2015 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
-Copyright 2017 Cubey2019.

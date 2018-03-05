@@ -15,17 +15,17 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Cubey2019/vertcore-p2p.git"
+    "url": "https://github.com/vertcoin-project/vertcore-p2p.git"
   },
   "dependencies": {
-    "vertcore-lib": "git://github.com/Cubey2019/vertcore-lib.git",
-    "vcoin": "git://github.com/Cubey2019/vcoin.git",
+    "vertcore-lib": "git://github.com/vertcoin-project/vertcore-lib.git",
+    "vcoin": "git://github.com/vertcoin-project/vcoin.git",
     "bloom-filter": "^0.2.0",
     "buffers": "bitpay/node-buffers#v0.1.2-bitpay",
     "socks5-client": "^0.3.6"
   },
   "devDependencies": {
-    "vertcore-build": "git://github.com/Cubey2019/vertcore-build.git",
+    "vertcore-build": "git://github.com/vertcoin-project/vertcore-build.git",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
     "gulp": "^3.8.10",
