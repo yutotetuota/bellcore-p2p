@@ -1,7 +1,7 @@
 {
-  "name": "vertcore-p2p",
+  "name": "bellcore-p2p",
   "version": "5.0.0-beta.2",
-  "description": "Interface to the vertcoin P2P network for vertcore",
+  "description": "Interface to the bellcoin P2P network for bellcore",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -10,22 +10,22 @@
     "build": "gulp"
   },
   "keywords": [
-    "vertcoin",
-    "vertcore"
+    "bellcoin",
+    "bellcore"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vertcoin-project/vertcore-p2p.git"
+    "url": "https://github.com/yutotetuota/bellcore-p2p.git"
   },
   "dependencies": {
-    "vertcore-lib": "git://github.com/vertcoin-project/vertcore-lib.git",
-    "vcoin": "git://github.com/vertcoin-project/vcoin.git",
+    "bellcore-lib": "git://github.com/yutotetuota/bellcore-lib.git",
+    "bcoin": "git://github.com/yutotetuota/bcoin.git",
     "bloom-filter": "^0.2.0",
     "buffers": "bitpay/node-buffers#v0.1.2-bitpay",
     "socks5-client": "^0.3.6"
   },
   "devDependencies": {
-    "vertcore-build": "git://github.com/vertcoin-project/vertcore-build.git",
+    "bitcore-build": "git://github.com/bitpay/bitcore-build.git",
     "brfs": "^1.2.0",
     "chai": "~1.10.0",
     "gulp": "^3.8.10",

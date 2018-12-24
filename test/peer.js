@@ -10,14 +10,14 @@ var expect = chai.expect;
 var sinon = require('sinon');
 var fs = require('fs');
 
-var vertcore = require('vertcore-lib');
-var _ = vertcore.deps._;
+var bitcore = require('bellcore-lib');
+var _ = bitcore.deps._;
 var P2P = require('../');
 var Peer = P2P.Peer;
 var EventEmitter = require('events').EventEmitter;
 var Messages = P2P.Messages;
 var messages = new Messages();
-var Networks = vertcore.Networks;
+var Networks = bitcore.Networks;
 
 describe('Peer', function() {
 

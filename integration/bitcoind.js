@@ -6,19 +6,19 @@ var chai = require('chai');
 var should = chai.should();
 var sinon = require('sinon');
 
-var vertcore = require('vertcore-lib');
-var _ = vertcore.deps._;
-var Random = vertcore.crypto.Random;
-var BN = vertcore.crypto.BN;
-var BufferUtil = vertcore.util.buffer;
+var bitcore = require('bellcore-lib');
+var _ = bitcore.deps._;
+var Random = bitcore.crypto.Random;
+var BN = bitcore.crypto.BN;
+var BufferUtil = bitcore.util.buffer;
 var p2p = require('../');
 var Peer = p2p.Peer;
 var Pool = p2p.Pool;
-var Networks = vertcore.Networks;
+var Networks = bitcore.Networks;
 var Messages = p2p.Messages;
 var Inventory = p2p.Inventory;
-var Block = vertcore.Block;
-var Transaction = vertcore.Transaction;
+var Block = bitcore.Block;
+var Transaction = bitcore.Transaction;
 
 // config 
 var network = process.env.NETWORK === 'testnet' ? Networks.testnet : Networks.livenet;
@@ -38,8 +38,8 @@ var txHash = {
   'testnet': '22231e8219a0617a0ded618b5dc713fdf9b0db8ebd5bb3322d3011a703119d3b'
 };
 
-// These tests require a running vertcoind instance
-describe('Integration with ' + network.name + ' vertcoind', function() {
+// These tests require a running bellcoind instance
+describe('Integration with ' + network.name + ' bellcoind', function() {
 
   this.timeout(15000);
   var opts = {

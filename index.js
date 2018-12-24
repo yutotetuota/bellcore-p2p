@@ -1,4 +1,4 @@
-var vertcore = require('vertcore-lib');
-vertcore.P2P = require('./lib');
+var bitcore = require('bitcore-lib');
+bitcore.P2P = require('./lib');
 
-module.exports = vertcore.P2P;
+module.exports = bitcore.P2P;

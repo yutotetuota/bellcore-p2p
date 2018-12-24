@@ -4,12 +4,12 @@
 
 var should = require('chai').should();
 
-var vertcore = require('vertcore-lib');
+var bitcore = require('bellcore-lib');
 var P2P = require('../');
 var Inventory = P2P.Inventory;
-var BufferUtils = vertcore.util.buffer;
-var BufferWriter = vertcore.encoding.BufferWriter;
-var BufferReader = vertcore.encoding.BufferReader;
+var BufferUtils = bitcore.util.buffer;
+var BufferWriter = bitcore.encoding.BufferWriter;
+var BufferReader = bitcore.encoding.BufferReader;
 
 describe('Inventory', function() {
 
@@ -50,11 +50,6 @@ describe('Inventory', function() {
       should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.BLOCK);
     });
-    it('use correct witness block type', function() {
-      var inventory = Inventory.forBlock(hash, true);
-      should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.WITNESS_BLOCK);
-    });
   });
 
   describe('#forFilteredBlock', function() {
@@ -63,29 +58,19 @@ describe('Inventory', function() {
       should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.FILTERED_BLOCK);
     });
-    it('use correct filtered witness block type', function() {
-      var inventory = Inventory.forFilteredBlock(hash, true);
-      should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.FILTERED_WITNESS_BLOCK);
-    });
   });
 
   describe('#forTransaction', function() {
-    it('use correct tx type', function() {
+    it('use correct filtered tx type', function() {
       var inventory = Inventory.forTransaction(hash);
       should.exist(inventory);
       inventory.type.should.equal(Inventory.TYPE.TX);
-    });
-    it('use correct witness tx type', function() {
-      var inventory = Inventory.forTransaction(hash, true);
-      should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
     });
   });
 
   describe('#toBuffer', function() {
     it('serialize correctly', function() {
-      var inventory = Inventory.forTransaction(hash, true);
+      var inventory = Inventory.forTransaction(hash);
       var buffer = inventory.toBuffer();
       buffer.should.deep.equal(inventoryBuffer);
     });
@@ -94,7 +79,7 @@ describe('Inventory', function() {
   describe('#toBufferWriter', function() {
     it('write to a buffer writer', function() {
       var bw = new BufferWriter();
-      var inventory = Inventory.forTransaction(hash, true);
+      var inventory = Inventory.forTransaction(hash);
       inventory.toBufferWriter(bw);
       bw.concat().should.deep.equal(inventoryBuffer);
     });
@@ -104,7 +89,7 @@ describe('Inventory', function() {
     it('deserialize a buffer', function() {
       var inventory = Inventory.fromBuffer(inventoryBuffer);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
+      inventory.type.should.equal(Inventory.TYPE.TX);
       inventory.hash.should.deep.equal(hash);
     });
   });
@@ -114,7 +99,7 @@ describe('Inventory', function() {
       var bw = new BufferReader(inventoryBuffer);
       var inventory = Inventory.fromBufferReader(bw);
       should.exist(inventory);
-      inventory.type.should.equal(Inventory.TYPE.WITNESS_TX);
+      inventory.type.should.equal(Inventory.TYPE.TX);
       inventory.hash.should.deep.equal(hash);
     });
   });

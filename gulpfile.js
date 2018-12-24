@@ -1,8 +1,8 @@
 'use strict';
 
 var gulp = require('gulp');
-var vertcoreTasks = require('vertcore-build');
+var bitcoreTasks = require('bitcore-build');
 
-vertcoreTasks('p2p', {skipBrowser: true});
+bitcoreTasks('p2p', {skipBrowser: true});
 
 gulp.task('default', ['lint', 'coverage']);

@@ -5,8 +5,8 @@ The quickest way to get connected is to run the following:
 
 ```javascript
 
-var Pool = require('vertcore-p2p').Pool;
-var Networks = require('vertcore-lib').Networks;
+var Pool = require('bellcore-p2p').Pool;
+var Networks = require('bellcore-lib').Networks;
 
 var pool = new Pool({network: Networks.livenet});
 
